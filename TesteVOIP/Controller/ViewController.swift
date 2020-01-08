@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+       configureTableView()
     }
     
     func configureTableView(){
@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.rowHeight = 100
         
-        
+        tableView.pin(to: view)
         
     }
     

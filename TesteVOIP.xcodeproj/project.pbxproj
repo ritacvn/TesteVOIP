@@ -14,6 +14,7 @@
 		5C0AC17423C65CEF00CC86B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C0AC17323C65CEF00CC86B6 /* Assets.xcassets */; };
 		5C0AC17723C65CEF00CC86B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C0AC17523C65CEF00CC86B6 /* LaunchScreen.storyboard */; };
 		5C0AC18223C6723D00CC86B6 /* ContraintsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0AC18123C6723D00CC86B6 /* ContraintsExt.swift */; };
+		5C0AC18423C674C100CC86B6 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0AC18323C674C100CC86B6 /* PhotoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		5C0AC17623C65CEF00CC86B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C0AC17823C65CEF00CC86B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C0AC18123C6723D00CC86B6 /* ContraintsExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContraintsExt.swift; sourceTree = "<group>"; };
+		5C0AC18323C674C100CC86B6 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoCell.swift; path = TesteVOIP/Controller/PhotoCell.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		5C0AC17E23C671A600CC86B6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5C0AC18323C674C100CC86B6 /* PhotoCell.swift */,
 				5C0AC18123C6723D00CC86B6 /* ContraintsExt.swift */,
 			);
 			path = Model;
@@ -168,6 +171,7 @@
 				5C0AC17223C65CED00CC86B6 /* TesteVOIP.xcdatamodeld in Sources */,
 				5C0AC16823C65CED00CC86B6 /* AppDelegate.swift in Sources */,
 				5C0AC18223C6723D00CC86B6 /* ContraintsExt.swift in Sources */,
+				5C0AC18423C674C100CC86B6 /* PhotoCell.swift in Sources */,
 				5C0AC16A23C65CED00CC86B6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

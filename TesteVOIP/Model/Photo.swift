@@ -8,18 +8,16 @@
 
 import Foundation
 
-struct PhotosResponse: Decodable {
-    var response: Photos
-}
-
-struct Photos: Decodable {
-    var photos:[PhotosInfo]
-}
-
-struct PhotosInfo: Decodable {
+struct PhotosInfo: Codable {
     var albumId: Int
     var id: Int
     var title: String
     var url: String
-    var thumbNail: URL
+    var thumbNailURL: URL
+    
+    enum CodingKeys: String, CodingKey {
+        case albumId = "albumId"
+        case id, title, url
+        case thumbNailURL = "thumbnailUrl"
+    }
 }

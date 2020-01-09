@@ -63,7 +63,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         
         
         cell.textLabel?.text = photo.title
-        cell.detailTextLabel?.text = photo.url
+        cell.textLabel?.sizeToFit()
+        
+        //cell.detailTextLabel?.text = photo.url
         
         return cell
     }

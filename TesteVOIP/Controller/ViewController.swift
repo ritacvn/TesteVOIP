@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
        configureTableView()
         
-        let photoRequest = PhotosRequest(photos: listOfPhotos)
+        let photoRequest = PhotosRequest()
         photoRequest.getPhotos{ [weak self] result in
             switch result{
             case .failure(let error):

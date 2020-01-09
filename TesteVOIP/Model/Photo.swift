@@ -21,5 +21,5 @@ struct PhotosInfo: Decodable {
     var id: Int
     var title: String
     var url: String
-    var thumbNail: String
+    var thumbNail: URL
 }

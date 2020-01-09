@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Just
 
 enum PhotosError: Error{
     case noDataAvilable
@@ -16,7 +17,7 @@ enum PhotosError: Error{
 struct PhotosRequest {
     let resourceURL: URL
     
-    init(photos: [PhotosInfo]){
+    init(){
         let resourceString = "https://jsonplaceholder.typicode.com/photos"
         
         guard let resourceURL = URL(string: resourceString) else{fatalError()}
@@ -25,14 +26,12 @@ struct PhotosRequest {
         
 }
     func getPhotos(completion: @escaping(Result<[PhotosInfo], PhotosError>) -> Void){
-        let dataTask = URLSession.shared.dataTask(with: resourceURL){data, _, _ in
-            guard let jsonData = data else {
-                completion(.failure(.noDataAvilable))
-                return
-            }
+        let url = "https://jsonplaceholder.typicode.com/photos"
+        Just.get(url){ (result) in
+        guard let data = result.content else {return}
             do{
                 let decoder = JSONDecoder()
-                let photosResponse = try decoder.decode(PhotosResponse.self, from: jsonData)
+                let photosResponse = try decoder.decode(PhotosResponse.self, from: data)
                 let photoDetails = photosResponse.response.photos
                 completion(.success(photoDetails))
                 
@@ -40,7 +39,6 @@ struct PhotosRequest {
                 completion(.failure(.canNotProcessData))
             }
         }
-        dataTask.resume()
     }
 }
 

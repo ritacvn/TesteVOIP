@@ -12,11 +12,28 @@ class ViewController: UIViewController {
 
     var tableView = UITableView()
     
-    var listOfPhotos = [PhotosInfo]()
+    var listOfPhotos = [PhotosInfo]() {
+        didSet{
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.navigationItem.title = "\(self.listOfPhotos) photos found"
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
        configureTableView()
+        
+        let photoRequest = PhotosRequest(photos: listOfPhotos)
+        photoRequest.getPhotos{ [weak self] result in
+            switch result{
+            case .failure(let error):
+                print(error)
+            case .success(let photos):
+                self?.listOfPhotos = photos
+            }
+        }
     }
     
     func configureTableView(){
@@ -31,14 +48,24 @@ class ViewController: UIViewController {
 
 }
 extension ViewController: UITableViewDelegate, UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listOfPhotos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
         
-        return UITableViewCell()
+        let photo = listOfPhotos[indexPath.row]
+        
+        
+        cell.textLabel?.text = photo.title
+        cell.detailTextLabel?.text = photo.url
+        
+        return cell
     }
     
     

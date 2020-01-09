@@ -10,16 +10,20 @@ import UIKit
 
 class PhotoDetailVC: UIViewController {
 
-    var imageView : UIImageView?
+    var imageView = UIImageView()
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .purple
-        imageView  = UIImageView(frame: CGRect(x: 5, y: 5, width: 200, height: 200))
-        imageView?.image = UIImage(named:"268x0w")
-        self.view.addSubview(imageView!)
-    }
+        view.backgroundColor = .white
+        imageView  = UIImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 200));
     
+        self.view.addSubview(imageView)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
 
   
 

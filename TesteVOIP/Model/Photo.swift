@@ -12,7 +12,7 @@ struct PhotosInfo: Codable {
     var albumId: Int
     var id: Int
     var title: String
-    var url: String
+    var url: URL
     var thumbNailURL: URL
     
     enum CodingKeys: String, CodingKey {

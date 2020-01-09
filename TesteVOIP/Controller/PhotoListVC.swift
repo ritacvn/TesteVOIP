@@ -71,6 +71,10 @@ extension PhotoListVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let destination = PhotoDetailVC()
+        
+        destination.imageView.load(url: listOfPhotos[indexPath.row].url, completion: {_ in
+
+        })
         navigationController?.pushViewController(destination, animated: true)
     }
 }

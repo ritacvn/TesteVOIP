@@ -60,12 +60,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = UITableViewCell()
         
         let photo = listOfPhotos[indexPath.row]
-        
+       
         
         cell.textLabel?.text = photo.title
-        cell.textLabel?.sizeToFit()
+        cell.textLabel?.textAlignment = .left
+        cell.imageView?.load(url: photo.thumbNailURL){_ in
+        }
         
-        //cell.detailTextLabel?.text = photo.url
+       
         
         return cell
     }

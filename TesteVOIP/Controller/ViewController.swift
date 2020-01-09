@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         didSet{
             DispatchQueue.main.async {
                 self.tableView.reloadData()
-                self.navigationItem.title = "\(self.listOfPhotos) photos found"
+                self.navigationItem.title = "\(self.listOfPhotos.count) photos found"
             }
         }
     }

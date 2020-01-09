@@ -29,6 +29,13 @@
         fatalError("init(coder:) has not been implemented")
     }
     
+    func set(photo: PhotosInfo){
+        photoImageView.load(url: photo.thumbNailURL) {_ in
+            
+        }
+        photoTitleLabel.text = photo.title
+    }
+    
     func configureImageView(){
         photoImageView.layer.cornerRadius = 10
         photoImageView.clipsToBounds = true
@@ -53,7 +60,7 @@
     func setTitleLabelConstraints(){
         photoTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         photoTitleLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        photoTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
+        photoTitleLabel.leadingAnchor.constraint(equalTo: photoImageView.trailingAnchor, constant: 20).isActive = true
         
         photoTitleLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
         

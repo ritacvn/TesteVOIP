@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PhotoListVC: UIViewController {
 
     var tableView = UITableView()
     
@@ -20,7 +20,9 @@ class ViewController: UIViewController {
             }
         }
     }
-    
+    struct Cells {
+        static let photoCell = "PhotoCell"
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
        configureTableView()
@@ -41,13 +43,13 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 100
-        
+        tableView.register(PhotoCell.self, forCellReuseIdentifier: Cells.photoCell)
         tableView.pin(to: view)
         
     }
 
 }
-extension ViewController: UITableViewDelegate, UITableViewDataSource{
+extension PhotoListVC: UITableViewDelegate, UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -57,16 +59,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: Cells.photoCell) as! PhotoCell
         
         let photo = listOfPhotos[indexPath.row]
        
-        
-        cell.textLabel?.text = photo.title
+        cell.set(photo: photo)
         cell.textLabel?.textAlignment = .left
-        cell.imageView?.load(url: photo.thumbNailURL){_ in
-        }
-        
+//        cell.textLabel?.text = photo.title
+//        cell.textLabel?.textAlignment = .left
+//        cell.imageView?.load(url: photo.thumbNailURL){_ in
+//        }
+
        
         
         return cell

@@ -65,16 +65,13 @@ extension PhotoListVC: UITableViewDelegate, UITableViewDataSource{
        
         cell.set(photo: photo)
         cell.textLabel?.textAlignment = .left
-//        cell.textLabel?.text = photo.title
-//        cell.textLabel?.textAlignment = .left
-//        cell.imageView?.load(url: photo.thumbNailURL){_ in
-//        }
-
-       
         
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let destination = PhotoDetailVC()
+        navigationController?.pushViewController(destination, animated: true)
+    }
 }
 

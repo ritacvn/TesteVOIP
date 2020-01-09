@@ -12,6 +12,8 @@ class ViewController: UIViewController {
 
     var tableView = UITableView()
     
+    var listOfPhotos = [PhotosInfo]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        configureTableView()
@@ -26,11 +28,12 @@ class ViewController: UIViewController {
         tableView.pin(to: view)
         
     }
-    
+
 }
 extension ViewController: UITableViewDelegate, UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return listOfPhotos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -40,3 +43,4 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     
     
 }
+

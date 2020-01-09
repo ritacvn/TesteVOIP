@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+struct PhotosResponse: Decodable {
+    var response: Photos
+}
+
+struct Photos: Decodable {
+    var photos:[PhotosInfo]
+}
+
+struct PhotosInfo: Decodable {
+    var albumId: Int
+    var id: Int
+    var title: String
+    var url: String
+    var thumbNail: String
+}

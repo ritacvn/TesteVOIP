@@ -1,14 +1,14 @@
   //
-//  PhotoCell.swift
-//  TesteVOIP
-//
-//  Created by Rita de Cássia Vasconcelos do Nascimento on 08/01/20.
-//  Copyright © 2020 Rita de Cássia Vasconcelos do Nascimento. All rights reserved.
-//
-
-import UIKit
-
-class PhotoCell: UITableViewCell {
+  //  PhotoCell.swift
+  //  TesteVOIP
+  //
+  //  Created by Rita de Cássia Vasconcelos do Nascimento on 08/01/20.
+  //  Copyright © 2020 Rita de Cássia Vasconcelos do Nascimento. All rights reserved.
+  //
+  
+  import UIKit
+  
+  class PhotoCell: UITableViewCell {
     
     var photoImageView = UIImageView()
     var photoTitleLabel = UILabel()
@@ -48,9 +48,6 @@ class PhotoCell: UITableViewCell {
         
         photoImageView.widthAnchor.constraint(equalTo: photoImageView.heightAnchor, multiplier: 16/9).isActive = true
         
-        
-        
-        
     }
     
     func setTitleLabelConstraints(){
@@ -64,5 +61,5 @@ class PhotoCell: UITableViewCell {
         
         
     }
-
+    
   }

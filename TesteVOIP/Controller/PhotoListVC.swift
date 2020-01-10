@@ -9,7 +9,7 @@
 import UIKit
 
 class PhotoListVC: UIViewController {
-
+    
     var tableView = UITableView()
     
     var listOfPhotos = [PhotosInfo]() {
@@ -25,7 +25,7 @@ class PhotoListVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-       configureTableView()
+        configureTableView()
         
         let photoRequest = PhotosRequest()
         photoRequest.getPhotos{ [weak self] result in
@@ -47,7 +47,7 @@ class PhotoListVC: UIViewController {
         tableView.pin(to: view)
         
     }
-
+    
 }
 extension PhotoListVC: UITableViewDelegate, UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -62,7 +62,7 @@ extension PhotoListVC: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: Cells.photoCell) as! PhotoCell
         
         let photo = listOfPhotos[indexPath.row]
-       
+        
         cell.set(photo: photo)
         cell.textLabel?.textAlignment = .left
         
@@ -72,9 +72,8 @@ extension PhotoListVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let destination = PhotoDetailVC()
         
-        destination.imageView.load(url: listOfPhotos[indexPath.row].url, completion: {_ in
-
-        })
+        destination.image = listOfPhotos[indexPath.row].url
+        
         navigationController?.pushViewController(destination, animated: true)
     }
 }

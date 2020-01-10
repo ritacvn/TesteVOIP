@@ -9,22 +9,29 @@
 import UIKit
 
 class PhotoDetailVC: UIViewController {
-
-    var imageView = UIImageView()
-
     
+    var imageView = UIImageView()
+    var image: URL?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        imageView  = UIImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 200));
+        configureImageView()
+    }
     
-        self.view.addSubview(imageView)
-    }
     override func viewWillAppear(_ animated: Bool) {
-        
+        self.view.addSubview(imageView)
+        imageView.load(url: image!) {_ in
+            
+        }
     }
-
-  
-
+    
+    func configureImageView(){
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView  = UIImageView(frame: CGRect(x: 0, y: 0, width: 375, height: 667))
+    }
+    
+    
+    
+    
 }

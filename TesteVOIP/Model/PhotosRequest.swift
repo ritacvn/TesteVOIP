@@ -24,20 +24,20 @@ struct PhotosRequest {
         
         self.resourceURL = resourceURL
         
-}
+    }
     func getPhotos(completion: @escaping(Result<[PhotosInfo], PhotosError>) -> Void){
         let url = "https://jsonplaceholder.typicode.com/photos"
         Just.get(url){ (result) in
             guard let data = result.content else {return}
-                do{
-                    let decoder = JSONDecoder()
-                    let photosResponse: [PhotosInfo] = try decoder.decode([PhotosInfo].self, from: data)
-                    let photoDetails = photosResponse
-                    completion(.success(photoDetails))
-                    
-                }catch{
-                    completion(.failure(.canNotProcessData))
-                }
+            do{
+                let decoder = JSONDecoder()
+                let photosResponse: [PhotosInfo] = try decoder.decode([PhotosInfo].self, from: data)
+                let photoDetails = photosResponse
+                completion(.success(photoDetails))
+                
+            }catch{
+                completion(.failure(.canNotProcessData))
+            }
         }
     }
 }

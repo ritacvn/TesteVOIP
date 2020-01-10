@@ -10,7 +10,7 @@ import UIKit
 class PhotoListVC: UIViewController {
     
     var tableView = UITableView()
-   
+    
     
     var listOfPhotos = [PhotosInfo]() {
         didSet{
@@ -31,14 +31,14 @@ class PhotoListVC: UIViewController {
     
     func photoRequest(){
         let photoRequest = PhotosRequest()
-               photoRequest.getPhotos{ [weak self] result in
-                   switch result{
-                   case .failure(let error):
-                       print(error)
-                   case .success(let photos):
-                       self?.listOfPhotos = photos
-                   }
-               }
+        photoRequest.getPhotos{ [weak self] result in
+            switch result{
+            case .failure(let error):
+                print(error)
+            case .success(let photos):
+                self?.listOfPhotos = photos
+            }
+        }
     }
     func configureTableView(){
         view.addSubview(tableView)

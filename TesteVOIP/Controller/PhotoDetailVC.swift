@@ -16,19 +16,20 @@ class PhotoDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        configureImageView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.view.addSubview(imageView)
+        setImageConstraints()
         imageView.load(url: image!) {_ in
             
         }
     }
     
-    func configureImageView(){
+    
+    func setImageConstraints() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView  = UIImageView(frame: CGRect(x: 0, y: 0, width: 375, height: 667))
+        imageView.pin(to: view)
     }
     
     

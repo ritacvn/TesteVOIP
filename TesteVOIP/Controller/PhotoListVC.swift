@@ -16,7 +16,7 @@ class PhotoListVC: UIViewController {
         didSet{
             DispatchQueue.main.async {
                 self.tableView.reloadData()
-                self.navigationItem.title = "\(self.listOfPhotos.count) photos found"
+                self.navigationItem.title = "Photos"
             }
         }
     }

@@ -20,6 +20,9 @@
 		5C0AC18B23C6D35500CC86B6 /* Just in Frameworks */ = {isa = PBXBuildFile; productRef = 5C0AC18A23C6D35500CC86B6 /* Just */; };
 		5C0AC18D23C6E74200CC86B6 /* UIImageViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0AC18C23C6E74200CC86B6 /* UIImageViewExt.swift */; };
 		5C0AC19123C7878800CC86B6 /* PhotoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0AC19023C7878800CC86B6 /* PhotoDetailVC.swift */; };
+		5C0AC19323C81B0B00CC86B6 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0AC19223C81B0B00CC86B6 /* PersistenceService.swift */; };
+		5C0AC19623C81DBD00CC86B6 /* Photo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0AC19423C81DBD00CC86B6 /* Photo+CoreDataClass.swift */; };
+		5C0AC19723C81DBD00CC86B6 /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0AC19523C81DBD00CC86B6 /* Photo+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,9 @@
 		5C0AC18723C6AD3D00CC86B6 /* PhotosRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRequest.swift; sourceTree = "<group>"; };
 		5C0AC18C23C6E74200CC86B6 /* UIImageViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExt.swift; sourceTree = "<group>"; };
 		5C0AC19023C7878800CC86B6 /* PhotoDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailVC.swift; sourceTree = "<group>"; };
+		5C0AC19223C81B0B00CC86B6 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		5C0AC19423C81DBD00CC86B6 /* Photo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5C0AC19523C81DBD00CC86B6 /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,8 @@
 		5C0AC17E23C671A600CC86B6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5C0AC19423C81DBD00CC86B6 /* Photo+CoreDataClass.swift */,
+				5C0AC19523C81DBD00CC86B6 /* Photo+CoreDataProperties.swift */,
 				5C0AC18323C674C100CC86B6 /* PhotoCell.swift */,
 				5C0AC18123C6723D00CC86B6 /* ContraintsExt.swift */,
 				5C0AC18523C6A62300CC86B6 /* Photo.swift */,
@@ -107,6 +115,7 @@
 				5C0AC16923C65CED00CC86B6 /* SceneDelegate.swift */,
 				5C0AC16B23C65CED00CC86B6 /* PhotoListVC.swift */,
 				5C0AC19023C7878800CC86B6 /* PhotoDetailVC.swift */,
+				5C0AC19223C81B0B00CC86B6 /* PersistenceService.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -188,10 +197,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C0AC18623C6A62300CC86B6 /* Photo.swift in Sources */,
+				5C0AC19723C81DBD00CC86B6 /* Photo+CoreDataProperties.swift in Sources */,
 				5C0AC18D23C6E74200CC86B6 /* UIImageViewExt.swift in Sources */,
 				5C0AC19123C7878800CC86B6 /* PhotoDetailVC.swift in Sources */,
+				5C0AC19323C81B0B00CC86B6 /* PersistenceService.swift in Sources */,
 				5C0AC16C23C65CED00CC86B6 /* PhotoListVC.swift in Sources */,
 				5C0AC17223C65CED00CC86B6 /* TesteVOIP.xcdatamodeld in Sources */,
+				5C0AC19623C81DBD00CC86B6 /* Photo+CoreDataClass.swift in Sources */,
 				5C0AC16823C65CED00CC86B6 /* AppDelegate.swift in Sources */,
 				5C0AC18823C6AD3D00CC86B6 /* PhotosRequest.swift in Sources */,
 				5C0AC18223C6723D00CC86B6 /* ContraintsExt.swift in Sources */,

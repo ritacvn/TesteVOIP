@@ -1,6 +1,5 @@
 //
-//  ViewController.swift
-//  TesteVOIP
+//  ViewController.swif//  TesteVOIP
 //
 //  Created by Rita de Cássia Vasconcelos do Nascimento on 08/01/20.
 //  Copyright © 2020 Rita de Cássia Vasconcelos do Nascimento. All rights reserved.
@@ -11,6 +10,7 @@ import UIKit
 class PhotoListVC: UIViewController {
     
     var tableView = UITableView()
+   
     
     var listOfPhotos = [PhotosInfo]() {
         didSet{
@@ -26,18 +26,20 @@ class PhotoListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        
-        let photoRequest = PhotosRequest()
-        photoRequest.getPhotos{ [weak self] result in
-            switch result{
-            case .failure(let error):
-                print(error)
-            case .success(let photos):
-                self?.listOfPhotos = photos
-            }
-        }
+        photoRequest()
     }
     
+    func photoRequest(){
+        let photoRequest = PhotosRequest()
+               photoRequest.getPhotos{ [weak self] result in
+                   switch result{
+                   case .failure(let error):
+                       print(error)
+                   case .success(let photos):
+                       self?.listOfPhotos = photos
+                   }
+               }
+    }
     func configureTableView(){
         view.addSubview(tableView)
         tableView.delegate = self
